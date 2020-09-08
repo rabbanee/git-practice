@@ -13,28 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'KarmaController@index')->name('index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/category', function () {
-    return view('category');
-})->name('category');
+Route::get('calculator', 'CalculatorController@index');
+Route::get('form', 'FormController@index');
+Route::post('proses', 'FormController@proses');
 
-Route::get('/single-product', 'KarmaController@singleProduct')->name('single-product');
+// Route::get('/', 'KarmaController@index')->name('index');
 
-Route::get('/checkout', 'KarmaController@checkout')->name('checkout');
+// Route::get('/category', function () {
+//     return view('category');
+// })->name('category');
 
-Route::get('/cart', 'KarmaController@cart')->name('cart');
+// Route::get('/single-product', 'KarmaController@singleProduct')->name('single-product');
 
-Route::get('/confirmation', 'KarmaController@confirmation')->name('confirmation');
+// Route::get('/checkout', 'KarmaController@checkout')->name('checkout');
 
-Route::get('/blog', 'KarmaController@blog')->name('blog');
+// Route::get('/cart', 'KarmaController@cart')->name('cart');
 
-Route::get('/single-blog', 'KarmaController@singleBlog')->name('single-blog');
+// Route::get('/confirmation', 'KarmaController@confirmation')->name('confirmation');
 
-Route::get('/login', 'KarmaController@login')->name('login');
+// Route::get('/blog', 'KarmaController@blog')->name('blog');
 
-Route::get('/tracking', 'KarmaController@tracking')->name('tracking');
+// Route::get('/single-blog', 'KarmaController@singleBlog')->name('single-blog');
 
-Route::get('/elements', 'KarmaController@elements')->name('elements');
+// Route::get('/login', 'KarmaController@login')->name('login');
 
-Route::get('/contact', 'KarmaController@contact')->name('contact');
+// Route::get('/tracking', 'KarmaController@tracking')->name('tracking');
+
+// Route::get('/elements', 'KarmaController@elements')->name('elements');
+
+// Route::get('/contact', 'KarmaController@contact')->name('contact');
